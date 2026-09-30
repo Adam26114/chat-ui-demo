@@ -1,0 +1,121 @@
+.ui-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    flex-shrink: 0;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 650;
+    transition:
+        background 0.18s,
+        color 0.18s,
+        transform 0.18s,
+        border-color 0.18s;
+}
+.ui-button:focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 3px;
+}
+.ui-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+.ui-button:not(:disabled):active {
+    transform: translateY(1px);
+}
+.ui-button--default {
+    min-height: 43px;
+    padding: 0 17px;
+}
+.ui-button--sm {
+    min-height: 38px;
+    padding: 0 15px;
+}
+.ui-button--lg {
+    min-height: 46px;
+    padding: 0 21px;
+}
+.ui-button--icon {
+    width: 37px;
+    height: 37px;
+    padding: 0;
+}
+.ui-button--xs {
+    min-height: 30px;
+    padding: 0 9px;
+    font-size: 12px;
+}
+.ui-button--icon-xs {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+}
+.ui-button--icon-sm {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+}
+.ui-button--primary {
+    background: #1c4b42;
+    color: #fff;
+}
+.ui-button--primary:hover:not(:disabled) {
+    background: #12392f;
+}
+.ui-button--destructive {
+    background: #b34632;
+    color: #fff;
+}
+.ui-button--destructive:hover:not(:disabled) {
+    background: #923522;
+}
+.ui-button--secondary {
+    background: #e8eadf;
+    color: #17322d;
+}
+.ui-button--secondary:hover:not(:disabled) {
+    background: #dce0d4;
+}
+.ui-button--outline {
+    border-color: #9eaaa2;
+    background: transparent;
+    color: #1b4138;
+}
+.ui-button--outline:hover:not(:disabled) {
+    background: #f0eee5;
+}
+.ui-button--ghost {
+    background: transparent;
+    color: inherit;
+}
+.ui-button--ghost:hover:not(:disabled) {
+    background: rgba(16, 55, 46, 0.07);
+}
+.ui-button--link {
+    background: transparent;
+    color: #1c4b42;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+.status-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #6daa84;
+}
+.status-dot--disconnected {
+    background: #aab0a7;
+}
+.status-dot--connecting {
+    background: #d5a45d;
+}
+.status-dot--connected {
+    background: #52aa78;
+}
+.status-dot--error {
+    background: #d66e5d;
+}

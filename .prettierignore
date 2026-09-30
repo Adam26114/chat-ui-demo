@@ -1,0 +1,9 @@
+node_modules/
+dist/
+dist-ssr/
+.opencode/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lock
+**/*.pen

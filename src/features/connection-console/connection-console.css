@@ -1,0 +1,118 @@
+.connection-console {
+    margin-top: 36px;
+    max-width: 520px;
+    background: #fffdf9;
+    border: 1px solid #d9dfd5;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 12px 40px #1d3c3517;
+}
+.console-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    color: #25483b;
+    font-size: 13px;
+}
+.console-title > span:last-child {
+    margin-left: auto;
+    color: #708075;
+    font-size: 11px;
+    text-transform: capitalize;
+}
+.console-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+.console-label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 10px;
+    font-weight: 750;
+    color: #607267;
+}
+.console-control-row {
+    display: flex;
+    gap: 7px;
+}
+.console-input,
+.console-payload {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid #d9e0d8;
+    border-radius: 8px;
+    background: white;
+    color: #29463c;
+    padding: 9px 10px;
+    font-size: 11px;
+    line-height: 1.4;
+}
+.console-control-row .console-input {
+    flex: 1;
+}
+.console-payload {
+    display: block;
+    resize: vertical;
+    min-height: 55px;
+}
+.console-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0 12px;
+}
+.console-actions span {
+    font-size: 10px;
+    color: #7e8a80;
+}
+.console-log {
+    height: 120px;
+    overflow: auto;
+    background: #f2f3ed;
+    border-radius: 8px;
+    padding: 9px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 10px;
+}
+.console-empty {
+    margin: 4px;
+    color: #7e8a80;
+    font-family: inherit;
+}
+.console-event {
+    border-bottom: 1px solid #e0e6dc;
+    padding: 4px 2px 7px;
+}
+.console-event:last-child {
+    border-bottom: 0;
+}
+.console-event > span {
+    color: #657568;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.console-event--sent > span {
+    color: #146b55;
+}
+.console-event--received > span {
+    color: #315ab2;
+}
+.console-event--error > span {
+    color: #b34632;
+}
+.console-event pre {
+    margin: 3px 0 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font: inherit;
+    color: #293e34;
+}
+@media (max-width: 620px) {
+    .connection-console {
+        margin-top: 30px;
+    }
+}

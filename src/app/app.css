@@ -1,0 +1,35 @@
+.demo-label {
+    position: fixed;
+    z-index: 5;
+    left: 26px;
+    bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 14px;
+    background: #fffdf5e8;
+    border: 1px solid #e5e0d2;
+    border-radius: 9px;
+    font-size: 10px;
+    font-weight: 750;
+    color: #3d5648;
+    letter-spacing: 0.08em;
+    box-shadow: 0 7px 20px #263e3112;
+}
+.demo-label > span:last-child {
+    font-weight: 450;
+    letter-spacing: 0;
+    color: #788679;
+    padding-left: 4px;
+}
+.demo-label-dot {
+    width: 7px;
+    height: 7px;
+    background: #b98e56;
+    border-radius: 50%;
+}
+@media (max-width: 620px) {
+    .demo-label {
+        display: none;
+    }
+}
