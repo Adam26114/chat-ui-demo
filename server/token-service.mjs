@@ -1,8 +1,22 @@
-import { KJUR } from "jsrsasign"
+import { createHmac } from "node:crypto"
 import { CONTEXT_KEYS } from "./config.mjs"
 
 export const MAX_BODY_BYTES = 8192
 const WINDOW_MS = 60_000
+
+function signingKeyBytes(key) {
+    // Preserve legacy jsrsasign key decoding: even-length hex is decoded; otherwise use raw low bytes, not UTF-8.
+    if (key.length % 2 === 0 && /^[0-9a-f]+$/i.test(key)) return Buffer.from(key, "hex")
+    return Buffer.from(key, "latin1")
+}
+
+function signHs256(header, payload, key) {
+    const encodedHeader = Buffer.from(JSON.stringify(header), "utf8").toString("base64url")
+    const encodedPayload = Buffer.from(JSON.stringify(payload), "utf8").toString("base64url")
+    const signingInput = `${encodedHeader}.${encodedPayload}`
+    const signature = createHmac("sha256", signingKeyBytes(key)).update(signingInput).digest("base64url")
+    return `${signingInput}.${signature}`
+}
 
 function safeJson(res, status, value) {
     const body = JSON.stringify(value)
@@ -110,7 +124,7 @@ export function createTokenHandler(config, testDependencies = {}) {
             const seconds = Math.floor(now() / 1000)
             const payload = { nbf: seconds, iat: seconds, exp: seconds + 3600, data: config.context }
             const header = { alg: "HS256", typ: "JWT" }
-            const token = KJUR.jws.JWS.sign("HS256", JSON.stringify(header), JSON.stringify(payload), config.signingKey)
+            const token = signHs256(header, payload, config.signingKey)
             return safeJson(res, 200, { token, expiresAtUnixSeconds: seconds + 3600, context: config.context })
         } catch {
             return safeJson(res, 400, { error: "Invalid JSON request" })

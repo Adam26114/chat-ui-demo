@@ -4,7 +4,7 @@ This repository contains a React 19/Vite demo, a Socket.IO chat source, a local 
 
 ## Local setup
 
-Use Node.js 22 or newer and npm. For a fresh setup, copy the templates without overwriting any existing configured local files:
+Use Node.js 22.13+ or Node.js 24+ and npm. The package engine is `^22.13.0 || >=24`. For a fresh setup, copy the templates without overwriting any existing configured local files:
 
 ```bash
 npm install
@@ -12,7 +12,7 @@ cp -n .env.example .env.local
 cp -n .env.server.example .env.server.local
 ```
 
-The templates have blank credential fields, while existing ignored `.env.local` and `.env.server.local` files are preserved and may already be configured. Fill values manually with approved values only; never add real credentials, JWTs, or signing keys to source control. Public `VITE_*` values belong in `.env.local`. Server-only values belong in `.env.server.local`. This is a root-only local profile: the two root templates are aligned, but values are not automatically imported from another profile. `CHAT_SERVER_KEY` must never be a `VITE_*` variable, and signing keys must not be trimmed. When whitespace is meaningful, quote the environment value. `jsrsasign` treats a plain string signing key with its plain-string/hex semantics; do not silently normalize it.
+The templates have blank credential fields, while existing ignored `.env.local` and `.env.server.local` files are preserved and may already be configured. Fill values manually with approved values only; never add real credentials, JWTs, or signing keys to source control. Public `VITE_*` values belong in `.env.local`. Server-only values belong in `.env.server.local`. This is a root-only local profile: the two root templates are aligned, but values are not automatically imported from another profile. `CHAT_SERVER_KEY` must never be a `VITE_*` variable, and signing keys must not be trimmed. When whitespace is meaningful, quote the environment value. The native `node:crypto` signer preserves legacy key semantics: an even-length, all-hex string is decoded as hex (case-insensitive); every other key uses the raw low 8 bits of its UTF-16 code units, with no UTF-8 reinterpretation, trimming, or normalization.
 
 Use separate terminals:
 
@@ -24,6 +24,17 @@ npm run dev
 The local issuer listens on `127.0.0.1:8787`; its default chat base URL is `http://127.0.0.1:5173/`, and the only supported local demo entry is exactly `http://127.0.0.1:5173/`. Keep this spelling consistently. Exact-byte comparisons reject differences in `localhost` versus `127.0.0.1`, case, or whitespace; signing and context checks do not normalize URLs. The local issuer accepts only an anonymous context with `x_auth_token: ""`. A non-empty booking token requires an authorized production `getAuthToken` provider and is rejected locally.
 
 The browser-visible demo settings are `VITE_CHAT_SERVER`, `VITE_APP_KEY`, `VITE_CUSTOMER`, `VITE_PROPERTY`, `VITE_BOOKING_LINK`, `VITE_LOGIN_LINK`, `VITE_PAYMENT_LINK`, `VITE_CHATBOX_TITLE`, and `VITE_AVATAR`. The server requires `CHAT_SERVER_KEY`, `CHAT_APP_KEY`, and `CHAT_CUSTOMER_ID`; optional server settings include the property/links, `CHAT_BASE_URL`, `CHAT_ISSUER_PORT`, `CHAT_ALLOWED_ORIGINS`, and `CHAT_SERVER_URL`. Do not use fake keys or invented profiles.
+
+### Main demo build
+
+Run the regular build with the pinned install:
+
+```bash
+npm ci
+npm run build
+```
+
+This restores the regular compiled frontend output under `dist`. The scoped install policy pins `esbuild@0.28.2` to `true` and optional macOS `fsevents@2.3.3` to `false`; npm 12.0.1 was used for verification. Older npm versions may not enforce this policy, so review trusted version changes rather than approving scripts with a blanket setting. The optional widget build remains unchanged and is documented below.
 
 For the selected `dev:wbe` mapping, `VITE_CHAT_SERVER` and `CHAT_SERVER_URL` are both `ws://ubicompsystem.no-ip.org:5000`. This is the remote Socket.IO backend, not a browser URL for the issuer and not the issuer port. Port `8787` remains the local issuer and Vite's normal browser proxy target. The old port `3000` is not part of this mapping. Empty booking, login, and payment links use page-relative browser defaults. Do not copy JWT fixtures or keys just to enable authentication.
 
@@ -74,7 +85,7 @@ type GetAuthToken = (request: {
 
 ### Runtime JWT flow
 
-For the local anonymous flow, the browser POSTs `/api/chat/token` to the Vite proxy. The issuer signs an HS256 JWT with the server-only `CHAT_SERVER_KEY`. Its header is `{"alg":"HS256","typ":"JWT"}`; its claims are `nbf`, `iat`, `exp` (one hour), and `data`, where `data` is exactly the seven-field context above. The browser checks the claim shape, expiry, and exact context, but does not verify the cryptographic signature. It sends the raw JWT on Socket.IO `authenticate`, then treats `success` or the first valid response as readiness. The browser does not sign tokens, and no static JWT is required.
+For the local anonymous flow, the browser POSTs `/api/chat/token` to the Vite proxy. The issuer signs an HS256 JWT with native `node:crypto` and the server-only `CHAT_SERVER_KEY`, preserving the legacy jsrsasign key semantics described above. Its header is `{"alg":"HS256","typ":"JWT"}`; its claims are `nbf`, `iat`, `exp` (one hour), and `data`, where `data` is exactly the seven-field context above. The browser checks the claim shape, expiry, and exact context, but does not verify the cryptographic signature. It sends the raw JWT on Socket.IO `authenticate`, then treats `success` or the first valid response as readiness. The browser does not sign tokens, and no static JWT is required.
 
 The reference fixture is `frontend/chat_server_json/jwt_token.json`, an unsigned documentation/sample-claims fixture. It is not read by the reference ChatBot, and the demo does not need that folder. The old README typo was `jwt_token.js`, not the JSON filename. A fixture is not a credential and must not be copied into local configuration. The `x_auth_token` booking value is distinct from the Socket.IO JWT. The local issuer supports anonymous context only; a non-empty value requires an authorized backend `getAuthToken` provider. Do not trust a query token or treat the local issuer as production parity.
 
@@ -93,7 +104,11 @@ The native WebSocket adapter is retained only as unused diagnostic code. Its `DE
 
 ## Offline verification and live QA
 
-The actual offline verification completed here is 77 Vitest tests across 11 Vitest files plus 10 Node tests, 87 total, all passing. `npx tsc --noEmit -p tsconfig.app.json` passes. `npm run lint` passes with 14 existing warnings; no runtime or UI warnings were fixed. `npm run build` passes with the existing client-bundle warning for a chunk over 500 kB (the client bundle is about 755 kB), so the build is not warning-free. `npm run build:widget` passes, including TypeScript declarations and all 16 declaration files. `npm run check:widget` also passes with all 16 declaration files verified. Widget checks preserve status dots, keep React external as both a peer and development dependency, and preserve the package contract.
+The actual offline verification completed here is 96 tests: 84 Vitest tests across 12 Vitest files plus 12 Node tests, all passing. `npx tsc --noEmit -p tsconfig.app.json` passes. `npm run lint` passes with 14 pre-existing warnings and zero errors; no unrelated warnings were fixed. `npm run build` passes without the default 500 kB chunk warning; the largest React chunk is 206.64 kB with Rolldown code splitting and strict execution order. This does not claim that total output size is 206.64 kB. `npm run build:widget` passes with about 704.39 kB of JavaScript, 9.73 kB of CSS, and all 16 declaration files. `npm run check:widget` also passes with all 16 declaration files verified. Widget checks preserve status dots, keep React external as both a peer and development dependency, and preserve the package contract. The existing audit has two moderate, pre-existing dev-only findings in Vitest 3.2.7 and `@vitest/mocker` 3.2.7; they were not resolved, and no audit-fix force or new-major upgrade was claimed.
+
+### Qualified offline split-bundle browser verification
+
+The split bundle was checked offline with Node 22.22.3 and npm 12.0.1 using the current browser configuration. A synthetic mock returned 403, one mock token POST was observed, and the hotel preview and chat widget rendered, with the widget displaying the expected `Connection failed` state from the synthetic 403. Missing configuration showed the setup alert with zero token requests. Desktop and mobile 390px minimize, close, reopen, and keyboard Enter flows passed; there were no page initialization errors. This used no real backend, authentication, or chat, and does not claim that actual ready, send, or live-backend behavior worked. Evidence was kept in the temporary directory `/var/folders/2j/pl16_p8s0slcr16_q58wc8740000gn/T/opencode/hotel-build-smoke/`; this is not a permanent fixture promise. The plain `npm run build` regular artifacts were restored afterward.
 
 ### Qualified offline React 18 browser verification
 

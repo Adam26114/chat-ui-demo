@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
+import { createHmac, timingSafeEqual } from "node:crypto"
 import test from "node:test"
-import { KJUR } from "jsrsasign"
 import { loadServerConfig } from "./config.mjs"
 import { createTokenServer } from "./index.mjs"
 
@@ -9,6 +9,34 @@ const env = {
     CHAT_SERVER_KEY: SYNTHETIC_SIGNING_KEY,
     CHAT_APP_KEY: "app",
     CHAT_CUSTOMER_ID: "customer",
+}
+
+const ORACLE_HEADER = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+const ORACLE_PAYLOAD = "eyJuYmYiOjE3MDAwMDAwMDAsImlhdCI6MTcwMDAwMDAwMCwiZXhwIjoxNzAwMDAzNjAwLCJkYXRhIjp7ImFwcF9rZXkiOiJhcHAiLCJjdXN0b21lcl9pZCI6ImN1c3RvbWVyIiwicHJvcGVydHlfY29kZSI6ImNhZsOpIiwiYm9va2luZ19saW5rIjoiaHR0cDovLzEyNy4wLjAuMTo1MTczL3Jlc2VydmF0aW9uIiwibG9naW5fbGluayI6Imh0dHA6Ly8xMjcuMC4wLjE6NTE3My9sb2dpbiIsInBheW1lbnRfbGluayI6Imh0dHA6Ly8xMjcuMC4wLjE6NTE3My9yZXNlcnZhdGlvbi9wYXltZW50IiwieF9hdXRoX3Rva2VuIjoiIn19"
+// Captured offline from jsrsasign 11.1.3 before removal with fixed synthetic context/time; no real credentials.
+const ORACLE_VECTORS = [
+    ["plain test key", "706c61696e2074657374206b6579", "MGtqmiMwLpTJPGV4B5blniVfGluU-I9Alg-J1J6gqWE"],
+    ["0011223344556677", "0011223344556677", "jpcmzwZNlgnx1sCP6A7yOLW1arQVWmuNLi8Ca52_x7E"],
+    ["AABBCCDDEEFF0011", "aabbccddeeff0011", "Xu4Gp66ssDh-WrNranMmKIIgEKWRQyRVNe9rgVO2OBM"],
+    ["abc", "616263", "Rekz-XUhWUeP8goIeiBc16bSG_Cch_O3oXBV0gnN5iY"],
+    ["00zz11", "30307a7a3131", "wjcBOeO1qtTQA9BRep01lB_oduT4BxWzVKRR8UUs0N8"],
+    [" key ", "206b657920", "VE95Kq36M-fkaMBwnRgFfAMpHwgBXo_JnPszKmsMMi0"],
+    ["café", "636166e9", "Z3OZXVHv1tkg__QTUfGPdzBgpf1MksmCJVvHKGwznPo"],
+    ["ākey", "016b6579", "xjFStpB0LS4MrVRW-l65dKL1p98391GueG8pgzQMEPM"],
+    ["😀key", "3d006b6579", "Jh9HR_YCr0JV_RHoWZsRmfEur6NX3rCuOGzXe011rfA"],
+]
+
+function verifyHs256(token, keyBytes) {
+    const parts = token.split(".")
+    if (parts.length !== 3 || !parts[0] || !parts[1] || !parts[2]) return false
+    let actual
+    try { actual = Buffer.from(parts[2], "base64url") } catch { return false }
+    const expected = createHmac("sha256", Buffer.from(keyBytes, "hex")).update(`${parts[0]}.${parts[1]}`).digest()
+    return actual.length === expected.length && timingSafeEqual(actual, expected)
+}
+
+function decodeJsonSegment(segment) {
+    return JSON.parse(Buffer.from(segment, "base64url").toString("utf8"))
 }
 
 function config(overrides = {}) {
@@ -92,22 +120,44 @@ test("issues exact signed claims", async () => {
         const response = await request(JSON.stringify({ context: cfg.context }))
         assert.equal(response.status, 200)
         const result = await response.json()
-        const parsed = KJUR.jws.JWS.parse(result.token)
-        assert.deepEqual(parsed.headerObj, { alg: "HS256", typ: "JWT" })
-        assert.deepEqual(parsed.payloadObj, { nbf: 1700000000, iat: 1700000000, exp: 1700003600, data: cfg.context })
+        const [header, payload] = result.token.split(".")
+        assert.deepEqual(decodeJsonSegment(header), { alg: "HS256", typ: "JWT" })
+        assert.deepEqual(decodeJsonSegment(payload), { nbf: 1700000000, iat: 1700000000, exp: 1700003600, data: cfg.context })
         assert.equal(result.expiresAtUnixSeconds, 1700003600)
         assert.deepEqual(result.context, cfg.context)
-        assert.equal(KJUR.jws.JWS.verify(result.token, SYNTHETIC_SIGNING_KEY, ["HS256"]), true)
+        assert.equal(verifyHs256(result.token, "706c61696e2074657374206b6579"), true)
     })
 })
 
 test("signs plain, even-length hex, and whitespace keys without rewriting", async () => {
-    for (const key of ["plain key", "0011223344556677", " key "]) {
+    for (const [key, keyBytes] of [["plain key", "706c61696e206b6579"], ["0011223344556677", "0011223344556677"], [" key ", "206b657920"]]) {
         await withFixture({ CHAT_SERVER_KEY: key }, {}, async ({ cfg, request }) => {
             const result = await (await request(JSON.stringify({ context: cfg.context }))).json()
-            assert.equal(KJUR.jws.JWS.verify(result.token, key, ["HS256"]), true)
+            assert.equal(verifyHs256(result.token, keyBytes), true)
         })
     }
+})
+
+test("matches jsrsasign golden JWTs for every legacy key decoding case", async () => {
+    for (const [key, keyBytes, signature] of ORACLE_VECTORS) {
+        await withFixture({ CHAT_SERVER_KEY: key, CHAT_PROPERTY_CODE: "café" }, { now: () => 1_700_000_000_000 }, async ({ cfg, request }) => {
+            const result = await (await request(JSON.stringify({ context: cfg.context }))).json()
+            const expected = `${ORACLE_HEADER}.${ORACLE_PAYLOAD}.${signature}`
+            assert.equal(result.token, expected)
+            assert.equal(verifyHs256(result.token, keyBytes), true)
+        })
+    }
+})
+
+test("rejects tampered, wrong-key, shortened, and malformed signatures", () => {
+    const token = `${ORACLE_HEADER}.${ORACLE_PAYLOAD}.${ORACLE_VECTORS[0][2]}`
+    const [header, payload, signature] = token.split(".")
+    const tamperedPayload = `${header}.${payload.slice(0, -1)}${payload.endsWith("A") ? "B" : "A"}.${signature}`
+    assert.equal(verifyHs256(tamperedPayload, ORACLE_VECTORS[0][1]), false)
+    assert.equal(verifyHs256(token, "776f6e67206b6579"), false)
+    assert.equal(verifyHs256(`${header}.${payload}.${signature.slice(1)}`, ORACLE_VECTORS[0][1]), false)
+    assert.equal(verifyHs256(`${header}.${payload}.not-base64!`, ORACLE_VECTORS[0][1]), false)
+    assert.equal(verifyHs256(`${header}.${payload}`, ORACLE_VECTORS[0][1]), false)
 })
 
 test("rejects duplicate keys, overrides, tokens, origins and content types", async () => {
