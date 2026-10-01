@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "es2023",
+        "lib": ["ES2023", "DOM"],
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "allowArbitraryExtensions": true,
+        "jsx": "react-jsx",
+        "strict": true,
+        "skipLibCheck": true,
+        "verbatimModuleSyntax": true,
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "declarationDir": "dist-widget/types",
+        "rootDir": "src",
+        "baseUrl": ".",
+        "paths": { "@/*": ["src/*"] }
+        ,"ignoreDeprecations": "6.0"
+    },
+    "include": ["src/chatbot.tsx"],
+    "exclude": ["src/**/*.test.*"]
+}

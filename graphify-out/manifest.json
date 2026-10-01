@@ -1,0 +1,542 @@
+{
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/.opencode/package.json": {
+    "mtime": 1790742487.4943273,
+    "ast_hash": "06f368d47ca1a2bb015f5535db8258f0",
+    "semantic_hash": "06f368d47ca1a2bb015f5535db8258f0"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/.oxlintrc.json": {
+    "mtime": 1790752640.199448,
+    "ast_hash": "34d75bbffed687b8c082233afd9a1fb9",
+    "semantic_hash": "34d75bbffed687b8c082233afd9a1fb9"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/.prettierrc.json": {
+    "mtime": 1790752624.5862298,
+    "ast_hash": "044a04922cdf7179bdd65669f006e3a6",
+    "semantic_hash": "044a04922cdf7179bdd65669f006e3a6"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/components.json": {
+    "mtime": 1790752640.206824,
+    "ast_hash": "4f3275605d4be83530f16d93c540cbdd",
+    "semantic_hash": "4f3275605d4be83530f16d93c540cbdd"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/package.json": {
+    "mtime": 1790841996.6489139,
+    "ast_hash": "345645b47e6ec1d01d125589fe29459d",
+    "semantic_hash": "345645b47e6ec1d01d125589fe29459d"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/scripts/check-widget.mjs": {
+    "mtime": 1790842984.734326,
+    "ast_hash": "626dad2b9c7532713be99eeec5617eb6",
+    "semantic_hash": "626dad2b9c7532713be99eeec5617eb6"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/scripts/live-qa.mjs": {
+    "mtime": 1790835827.660699,
+    "ast_hash": "51cee933faa6565dd90e7d3481a3f14d",
+    "semantic_hash": "51cee933faa6565dd90e7d3481a3f14d"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/server/config.mjs": {
+    "mtime": 1790834603.2592788,
+    "ast_hash": "57975864db50bd69727f28e0c0290719",
+    "semantic_hash": "57975864db50bd69727f28e0c0290719"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/server/index.mjs": {
+    "mtime": 1790832716.2035475,
+    "ast_hash": "ca12f42e90e59be1c277b7aa73a6914d",
+    "semantic_hash": "ca12f42e90e59be1c277b7aa73a6914d"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/app/app.tsx": {
+    "mtime": 1790844009.1627433,
+    "ast_hash": "41eacb7b670e318cf4ffd242d6f92e53",
+    "semantic_hash": "41eacb7b670e318cf4ffd242d6f92e53"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/chatbot.tsx": {
+    "mtime": 1790841290.2076566,
+    "ast_hash": "a6dcd0e29f5c4f5bf4436661ee0bf4c1",
+    "semantic_hash": "a6dcd0e29f5c4f5bf4436661ee0bf4c1"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/accordion.tsx": {
+    "mtime": 1790752640.4198985,
+    "ast_hash": "1207d9fa454908a5cbad220b0b58a8be",
+    "semantic_hash": "1207d9fa454908a5cbad220b0b58a8be"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/alert-dialog.tsx": {
+    "mtime": 1790752640.441769,
+    "ast_hash": "d56e2773a976a0af8856abc9a9dbe90a",
+    "semantic_hash": "d56e2773a976a0af8856abc9a9dbe90a"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/alert.tsx": {
+    "mtime": 1790752640.4505126,
+    "ast_hash": "afc36bd1515b6b32be2793aa9dc5f4d9",
+    "semantic_hash": "afc36bd1515b6b32be2793aa9dc5f4d9"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/aspect-ratio.tsx": {
+    "mtime": 1790744616.263087,
+    "ast_hash": "ea9c6ff6c2931b5089972bfba3fa5c1f",
+    "semantic_hash": "ea9c6ff6c2931b5089972bfba3fa5c1f"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/avatar.tsx": {
+    "mtime": 1790752640.4608362,
+    "ast_hash": "5b6f02b4b89d24bfcc9459b3e3bf8dd3",
+    "semantic_hash": "5b6f02b4b89d24bfcc9459b3e3bf8dd3"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/badge.tsx": {
+    "mtime": 1790752640.4672463,
+    "ast_hash": "da4cb5abe22b9b1c32110fef11223cc8",
+    "semantic_hash": "da4cb5abe22b9b1c32110fef11223cc8"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/breadcrumb.tsx": {
+    "mtime": 1790752640.4852197,
+    "ast_hash": "478ac2c40f72df6846bcb47694778749",
+    "semantic_hash": "478ac2c40f72df6846bcb47694778749"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/button-group.tsx": {
+    "mtime": 1790752640.4925475,
+    "ast_hash": "b7439ef51b3cba3f74069a3d63954bab",
+    "semantic_hash": "b7439ef51b3cba3f74069a3d63954bab"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/button.tsx": {
+    "mtime": 1790752640.4981549,
+    "ast_hash": "4340ae126ac5b583c845d7a5b0f40a18",
+    "semantic_hash": "4340ae126ac5b583c845d7a5b0f40a18"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/calendar.tsx": {
+    "mtime": 1790752640.5172987,
+    "ast_hash": "adcda406350c20c27779cad6e03455b5",
+    "semantic_hash": "adcda406350c20c27779cad6e03455b5"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/card.tsx": {
+    "mtime": 1790752640.5261176,
+    "ast_hash": "5e62edb80c2405d0aebe0cb0ac44f483",
+    "semantic_hash": "5e62edb80c2405d0aebe0cb0ac44f483"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/carousel.tsx": {
+    "mtime": 1790752640.5428739,
+    "ast_hash": "0cef794714d3a64b0af63c55ed77b218",
+    "semantic_hash": "0cef794714d3a64b0af63c55ed77b218"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/chart.tsx": {
+    "mtime": 1790752640.5736651,
+    "ast_hash": "35b865e9d48292ab5efb1ebbe08f513c",
+    "semantic_hash": "35b865e9d48292ab5efb1ebbe08f513c"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/checkbox.tsx": {
+    "mtime": 1790752640.5800598,
+    "ast_hash": "eb9544de0b0fff41fc132c4f6365264b",
+    "semantic_hash": "eb9544de0b0fff41fc132c4f6365264b"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/collapsible.tsx": {
+    "mtime": 1790744658.5899823,
+    "ast_hash": "8bcc61ee503a05663fb77ad9b7ec064a",
+    "semantic_hash": "8bcc61ee503a05663fb77ad9b7ec064a"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/command.tsx": {
+    "mtime": 1790752640.5942912,
+    "ast_hash": "67d13ed4ed35749fff6fefd53a0cfaf1",
+    "semantic_hash": "67d13ed4ed35749fff6fefd53a0cfaf1"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/context-menu.tsx": {
+    "mtime": 1790752640.6062262,
+    "ast_hash": "99f9fb3327b1fd73817d4e5796fae961",
+    "semantic_hash": "99f9fb3327b1fd73817d4e5796fae961"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/dialog.tsx": {
+    "mtime": 1790752640.614271,
+    "ast_hash": "253a2b3bd9989c47207c7e47ead19d2a",
+    "semantic_hash": "253a2b3bd9989c47207c7e47ead19d2a"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/drawer.tsx": {
+    "mtime": 1790752640.6233995,
+    "ast_hash": "a031e26cb41f05a29f709a9b9461938b",
+    "semantic_hash": "a031e26cb41f05a29f709a9b9461938b"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/dropdown-menu.tsx": {
+    "mtime": 1790752640.6355603,
+    "ast_hash": "836b823a422d85543d8c8f139fcb8852",
+    "semantic_hash": "836b823a422d85543d8c8f139fcb8852"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/empty.tsx": {
+    "mtime": 1790752640.6412566,
+    "ast_hash": "55835d79845fee655d500b64b06dccd8",
+    "semantic_hash": "55835d79845fee655d500b64b06dccd8"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/field.tsx": {
+    "mtime": 1790752640.6495907,
+    "ast_hash": "be50ad845ee4a2d2419a81831f15b0fc",
+    "semantic_hash": "be50ad845ee4a2d2419a81831f15b0fc"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/form.tsx": {
+    "mtime": 1790752640.6599102,
+    "ast_hash": "1d1154b1004846c955a868dd11989358",
+    "semantic_hash": "1d1154b1004846c955a868dd11989358"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/hover-card.tsx": {
+    "mtime": 1790752640.6657436,
+    "ast_hash": "6d929a8b87327ce95e4bbe1017f19c5c",
+    "semantic_hash": "6d929a8b87327ce95e4bbe1017f19c5c"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/input-group.tsx": {
+    "mtime": 1790752640.675309,
+    "ast_hash": "2af26f03e3295567362a549b2d72bca4",
+    "semantic_hash": "2af26f03e3295567362a549b2d72bca4"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/input-otp.tsx": {
+    "mtime": 1790752640.685754,
+    "ast_hash": "0ebce6485fe0b1fb416a4e95e705bf3b",
+    "semantic_hash": "0ebce6485fe0b1fb416a4e95e705bf3b"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/input.tsx": {
+    "mtime": 1790752640.690333,
+    "ast_hash": "d407b1365534df897235aca9deb07f75",
+    "semantic_hash": "d407b1365534df897235aca9deb07f75"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/item.tsx": {
+    "mtime": 1790752640.7006702,
+    "ast_hash": "42272fafe81802be384e2e2d8533dc89",
+    "semantic_hash": "42272fafe81802be384e2e2d8533dc89"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/kbd.tsx": {
+    "mtime": 1790752640.706892,
+    "ast_hash": "9a0b3c40eb70fe12e23ab79447e54201",
+    "semantic_hash": "9a0b3c40eb70fe12e23ab79447e54201"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/label.tsx": {
+    "mtime": 1790752640.7122307,
+    "ast_hash": "c29a6fc74eb9341796616c35251c58fb",
+    "semantic_hash": "c29a6fc74eb9341796616c35251c58fb"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/menubar.tsx": {
+    "mtime": 1790752640.7312884,
+    "ast_hash": "b6dd1e79e0e3a09e1bbca99a9428791a",
+    "semantic_hash": "b6dd1e79e0e3a09e1bbca99a9428791a"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/navigation-menu.tsx": {
+    "mtime": 1790752640.7414067,
+    "ast_hash": "9150ec5538474534ffb543a5e008e954",
+    "semantic_hash": "9150ec5538474534ffb543a5e008e954"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/pagination.tsx": {
+    "mtime": 1790752640.752334,
+    "ast_hash": "ad0b0bddd4b0ca3d5c004ba75f7e8dc7",
+    "semantic_hash": "ad0b0bddd4b0ca3d5c004ba75f7e8dc7"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/popover.tsx": {
+    "mtime": 1790752640.7614517,
+    "ast_hash": "dd302e66b0506f6055a5ac327fffb498",
+    "semantic_hash": "dd302e66b0506f6055a5ac327fffb498"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/progress.tsx": {
+    "mtime": 1790752640.7677758,
+    "ast_hash": "4727e47969286526aa1f1147f27f6e4b",
+    "semantic_hash": "4727e47969286526aa1f1147f27f6e4b"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/radio-group.tsx": {
+    "mtime": 1790752640.7732115,
+    "ast_hash": "2b67c8a6ce9edad286734e14312204d8",
+    "semantic_hash": "2b67c8a6ce9edad286734e14312204d8"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/resizable.tsx": {
+    "mtime": 1790752640.7784486,
+    "ast_hash": "e19e3a56141449367427fe470731dbe4",
+    "semantic_hash": "e19e3a56141449367427fe470731dbe4"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/scroll-area.tsx": {
+    "mtime": 1790752640.783285,
+    "ast_hash": "b568fe7d7e0a17d0c6f0837dd722d972",
+    "semantic_hash": "b568fe7d7e0a17d0c6f0837dd722d972"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/select.tsx": {
+    "mtime": 1790752640.7902014,
+    "ast_hash": "5b326c8d09d7edebca3007e61cfc82f5",
+    "semantic_hash": "5b326c8d09d7edebca3007e61cfc82f5"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/separator.tsx": {
+    "mtime": 1790752640.7934542,
+    "ast_hash": "f8cbf8bed11b7c4fd6ef3a7cc744caf5",
+    "semantic_hash": "f8cbf8bed11b7c4fd6ef3a7cc744caf5"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/sheet.tsx": {
+    "mtime": 1790752640.803264,
+    "ast_hash": "d926efd2fa1c694f1c6981e75028fbef",
+    "semantic_hash": "d926efd2fa1c694f1c6981e75028fbef"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/sidebar.tsx": {
+    "mtime": 1790752640.8712177,
+    "ast_hash": "1f56c0f4dc2b509ae2ca2300b6d93dfb",
+    "semantic_hash": "1f56c0f4dc2b509ae2ca2300b6d93dfb"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/skeleton.tsx": {
+    "mtime": 1790752640.8761327,
+    "ast_hash": "88b8009115132ae4b4f89255dd494ddf",
+    "semantic_hash": "88b8009115132ae4b4f89255dd494ddf"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/slider.tsx": {
+    "mtime": 1790752640.8872898,
+    "ast_hash": "48a3703c8411471db110e605f5a9dd2a",
+    "semantic_hash": "48a3703c8411471db110e605f5a9dd2a"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/sonner.tsx": {
+    "mtime": 1790752640.8920815,
+    "ast_hash": "0484dd6883d33051953aed2e897043ed",
+    "semantic_hash": "0484dd6883d33051953aed2e897043ed"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/spinner.tsx": {
+    "mtime": 1790752640.896851,
+    "ast_hash": "96132513e0aa26ef76b2f8e0e9825d6e",
+    "semantic_hash": "96132513e0aa26ef76b2f8e0e9825d6e"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/switch.tsx": {
+    "mtime": 1790752640.9013305,
+    "ast_hash": "8a4da42769317b9a54e9547b65def294",
+    "semantic_hash": "8a4da42769317b9a54e9547b65def294"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/table.tsx": {
+    "mtime": 1790752640.908083,
+    "ast_hash": "d07fdad47191cd563274709d6c1e1606",
+    "semantic_hash": "d07fdad47191cd563274709d6c1e1606"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/tabs.tsx": {
+    "mtime": 1790752640.9127376,
+    "ast_hash": "80785a9e602894db942331865d8b61d0",
+    "semantic_hash": "80785a9e602894db942331865d8b61d0"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/textarea.tsx": {
+    "mtime": 1790752640.917011,
+    "ast_hash": "6cff460ec3b5f6736577e06cda566b8b",
+    "semantic_hash": "6cff460ec3b5f6736577e06cda566b8b"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/toggle-group.tsx": {
+    "mtime": 1790752640.9282565,
+    "ast_hash": "a034370bb8ce6356c9df9d5ac5bd6e65",
+    "semantic_hash": "a034370bb8ce6356c9df9d5ac5bd6e65"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/toggle.tsx": {
+    "mtime": 1790752640.9325802,
+    "ast_hash": "53621ca0caab4995606caf82a2ba846b",
+    "semantic_hash": "53621ca0caab4995606caf82a2ba846b"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/components/ui/tooltip.tsx": {
+    "mtime": 1790752640.935545,
+    "ast_hash": "3a0d8e1b760f0b1ba14f1e7d3cc8306c",
+    "semantic_hash": "3a0d8e1b760f0b1ba14f1e7d3cc8306c"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/features/chat/components/chat-composer.tsx": {
+    "mtime": 1790841928.23087,
+    "ast_hash": "6205593f46866809cbd588a9977dfb3d",
+    "semantic_hash": "6205593f46866809cbd588a9977dfb3d"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/features/chat/components/chat-thread.tsx": {
+    "mtime": 1790840808.5500512,
+    "ast_hash": "5464cc7bce0b05228bbbf1a700d33180",
+    "semantic_hash": "5464cc7bce0b05228bbbf1a700d33180"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/features/chat/components/chat-widget.test.tsx": {
+    "mtime": 1790844058.9012916,
+    "ast_hash": "9e46c856bdb4093bfc6f0d986e08af49",
+    "semantic_hash": "9e46c856bdb4093bfc6f0d986e08af49"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/features/chat/components/chat-widget.tsx": {
+    "mtime": 1790844101.5460525,
+    "ast_hash": "4c43c8c089440b7f1e4d2ce235d16549",
+    "semantic_hash": "4c43c8c089440b7f1e4d2ce235d16549"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/features/chat/components/chatbot-integration.test.tsx": {
+    "mtime": 1790841414.0223887,
+    "ast_hash": "cb56863f3ed9decbcc7c4baa6bdc428d",
+    "semantic_hash": "cb56863f3ed9decbcc7c4baa6bdc428d"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/features/chat/components/chatbot.test.tsx": {
+    "mtime": 1790837930.8267915,
+    "ast_hash": "72bed93ec1a4766eddbd92dc21d9e53d",
+    "semantic_hash": "72bed93ec1a4766eddbd92dc21d9e53d"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/features/chat/components/chatbot.tsx": {
+    "mtime": 1790842302.319381,
+    "ast_hash": "ef1d1b973e750a6925eddb3593a2e6da",
+    "semantic_hash": "ef1d1b973e750a6925eddb3593a2e6da"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/features/chat/components/server-message.test.tsx": {
+    "mtime": 1790844039.3658621,
+    "ast_hash": "3aa89ac38cbcdff1d2af2c6e9ba156e4",
+    "semantic_hash": "3aa89ac38cbcdff1d2af2c6e9ba156e4"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/features/chat/components/server-message.tsx": {
+    "mtime": 1790844009.1630764,
+    "ast_hash": "f6bbde3b5b0bf3e3d15b7fc8a2c461ab",
+    "semantic_hash": "f6bbde3b5b0bf3e3d15b7fc8a2c461ab"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/features/chat/components/user-message.tsx": {
+    "mtime": 1790752640.9827752,
+    "ast_hash": "80dccea69c00fda67035c31b5b17060b",
+    "semantic_hash": "80dccea69c00fda67035c31b5b17060b"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/features/chat/runtime/chat-runtime-provider.test.tsx": {
+    "mtime": 1790837859.7092662,
+    "ast_hash": "c749927e4529babcd1549ed8aafc9d7d",
+    "semantic_hash": "c749927e4529babcd1549ed8aafc9d7d"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/features/chat/runtime/chat-runtime-provider.tsx": {
+    "mtime": 1790844602.9534004,
+    "ast_hash": "8514ada656db183468b93184dfd8608d",
+    "semantic_hash": "8514ada656db183468b93184dfd8608d"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/features/chat/runtime/chat-runtime-regression.test.tsx": {
+    "mtime": 1790844602.9542203,
+    "ast_hash": "32656795d2994209c21da3cf23b7e8ba",
+    "semantic_hash": "32656795d2994209c21da3cf23b7e8ba"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/features/chat/runtime/host-events.test.ts": {
+    "mtime": 1790840781.1484826,
+    "ast_hash": "921ec69b90a226fc283e1ea81aa689dd",
+    "semantic_hash": "921ec69b90a226fc283e1ea81aa689dd"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/features/chat/runtime/host-events.ts": {
+    "mtime": 1790840781.136359,
+    "ast_hash": "f3133a124776285841138d01abba45d6",
+    "semantic_hash": "f3133a124776285841138d01abba45d6"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/features/chat/types.ts": {
+    "mtime": 1790831815.4677458,
+    "ast_hash": "92aababcba1fb4acea6b727b55aead11",
+    "semantic_hash": "92aababcba1fb4acea6b727b55aead11"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/features/connection-console/components/connection-console.tsx": {
+    "mtime": 1790840748.165503,
+    "ast_hash": "6025658a1730ef347d968c5b9ec8ca13",
+    "semantic_hash": "6025658a1730ef347d968c5b9ec8ca13"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/features/connection-console/components/socket-traffic-log.tsx": {
+    "mtime": 1790840748.1665971,
+    "ast_hash": "ee73d27b757eb97b44ffd5cf886d0500",
+    "semantic_hash": "ee73d27b757eb97b44ffd5cf886d0500"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/features/hotel-preview/components/hotel-preview.tsx": {
+    "mtime": 1790752641.034417,
+    "ast_hash": "1fb43541d23fbec96aead9abae248ac1",
+    "semantic_hash": "1fb43541d23fbec96aead9abae248ac1"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/hooks/use-mobile.tsx": {
+    "mtime": 1790752641.0597548,
+    "ast_hash": "d86364ade21ef8bd0e1a44760d8879fd",
+    "semantic_hash": "d86364ade21ef8bd0e1a44760d8879fd"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/lib/messaging/chat-auth.test.ts": {
+    "mtime": 1790854253.302943,
+    "ast_hash": "cf7eb2bee2520d355f9f6300f4693612",
+    "semantic_hash": "cf7eb2bee2520d355f9f6300f4693612"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/lib/messaging/chat-auth.ts": {
+    "mtime": 1790833839.0887332,
+    "ast_hash": "7f2a28aa226b1664efde2ba9a867ab23",
+    "semantic_hash": "7f2a28aa226b1664efde2ba9a867ab23"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/lib/messaging/chatbot-config.test.ts": {
+    "mtime": 1790853756.5092516,
+    "ast_hash": "29eefec1a441f3871d9368fce1e70f75",
+    "semantic_hash": "29eefec1a441f3871d9368fce1e70f75"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/lib/messaging/chatbot-config.ts": {
+    "mtime": 1790833424.6787083,
+    "ast_hash": "411b67d8a7fc46d3fcca115c9503c1e3",
+    "semantic_hash": "411b67d8a7fc46d3fcca115c9503c1e3"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/lib/messaging/socketio-source.test.ts": {
+    "mtime": 1790841876.9700205,
+    "ast_hash": "b9084700863561e6ef15219a2023ca31",
+    "semantic_hash": "b9084700863561e6ef15219a2023ca31"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/lib/messaging/socketio-source.ts": {
+    "mtime": 1790841852.7687793,
+    "ast_hash": "8bb919e98b0f1e30d94e52a5c7935e32",
+    "semantic_hash": "8bb919e98b0f1e30d94e52a5c7935e32"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/lib/messaging/socketio-timing.test.ts": {
+    "mtime": 1790836146.6490743,
+    "ast_hash": "f87ef0810c6a0a98f8a55333063a0fa4",
+    "semantic_hash": "f87ef0810c6a0a98f8a55333063a0fa4"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/lib/messaging/types.ts": {
+    "mtime": 1790832959.8961647,
+    "ast_hash": "0186ebd2abba253b6f10de50e67373b8",
+    "semantic_hash": "0186ebd2abba253b6f10de50e67373b8"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/lib/messaging/websocket-source.ts": {
+    "mtime": 1790833462.6719515,
+    "ast_hash": "0e8a43938af9a0e618a1800163badf32",
+    "semantic_hash": "0e8a43938af9a0e618a1800163badf32"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/lib/utils.ts": {
+    "mtime": 1790752641.0807695,
+    "ast_hash": "d0b9fdf4a3ce463b3d98e22e8289695c",
+    "semantic_hash": "d0b9fdf4a3ce463b3d98e22e8289695c"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/src/main.tsx": {
+    "mtime": 1790752641.0835202,
+    "ast_hash": "a4430acdbd463d7c109c1cc179ab6496",
+    "semantic_hash": "a4430acdbd463d7c109c1cc179ab6496"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/tsconfig.app.json": {
+    "mtime": 1790752641.1133006,
+    "ast_hash": "b10794d9f10ec3034f5880f17ae23717",
+    "semantic_hash": "b10794d9f10ec3034f5880f17ae23717"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/tsconfig.json": {
+    "mtime": 1790752641.1150954,
+    "ast_hash": "5334e688605afd84c23a8e18b8ccbf4a",
+    "semantic_hash": "5334e688605afd84c23a8e18b8ccbf4a"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/tsconfig.node.json": {
+    "mtime": 1790841252.671884,
+    "ast_hash": "4f2dfb14b652689447efd85baa7d2190",
+    "semantic_hash": "4f2dfb14b652689447efd85baa7d2190"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/tsconfig.widget.json": {
+    "mtime": 1790841271.6159246,
+    "ast_hash": "3308a77d5518612fae0fff4d8f066b70",
+    "semantic_hash": "3308a77d5518612fae0fff4d8f066b70"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/vite.config.ts": {
+    "mtime": 1790832716.2038925,
+    "ast_hash": "207519b7c4f9be0da20bef6401bd7174",
+    "semantic_hash": "207519b7c4f9be0da20bef6401bd7174"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/vite.widget.config.ts": {
+    "mtime": 1790842079.5984993,
+    "ast_hash": "060b53f352de1edc37687b9df7c5419b",
+    "semantic_hash": "060b53f352de1edc37687b9df7c5419b"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/vitest.config.ts": {
+    "mtime": 1790833852.382751,
+    "ast_hash": "0345321bd804f3be8ea56c2c94471224",
+    "semantic_hash": "0345321bd804f3be8ea56c2c94471224"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/.opencode/AGENT.md": {
+    "mtime": 1790844451.6516368,
+    "ast_hash": "ea9159a446404c23ff29d0f2c105b357",
+    "semantic_hash": "ea9159a446404c23ff29d0f2c105b357"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/.opencode/plan/plan.md": {
+    "mtime": 1790829797.8510573,
+    "ast_hash": "3d0d6d708a3ff1328a05f69f7c8a399d",
+    "semantic_hash": "3d0d6d708a3ff1328a05f69f7c8a399d"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/PROMPT.md": {
+    "mtime": 1790825795.247826,
+    "ast_hash": "f55b47fc2c19ae8ba110dfbda04d0399",
+    "semantic_hash": "f55b47fc2c19ae8ba110dfbda04d0399"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/README.md": {
+    "mtime": 1790854714.491365,
+    "ast_hash": "18136173dff74727c6c2f088f65d017a",
+    "semantic_hash": "18136173dff74727c6c2f088f65d017a"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/index.html": {
+    "mtime": 1790855797.2712302,
+    "ast_hash": "ee7867e1a94c32244d5882abd344f3e2",
+    "semantic_hash": "ee7867e1a94c32244d5882abd344f3e2"
+  },
+  "/Users/zweaungnaing/Developer/Project/vibe-coding/hotel-chat-ui-demo/public/fav.svg": {
+    "mtime": 1790855503.7351682,
+    "ast_hash": "7331aef70d00f569e8ab33d4443a897e",
+    "semantic_hash": "7331aef70d00f569e8ab33d4443a897e"
+  }
+}

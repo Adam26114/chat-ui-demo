@@ -1,0 +1,20 @@
+{
+  "runs": [
+    {
+      "date": "2026-10-01T12:35:33.602626+00:00",
+      "input_tokens": null,
+      "output_tokens": null,
+      "estimated_cost_usd": null,
+      "usage_available": false,
+      "explanation": "Usage metadata is not exposed for this run; token usage and monetary cost are unknown/unmeasured.",
+      "files": 108
+    }
+  ],
+  "total_input_tokens": 0,
+  "total_output_tokens": 0,
+  "total_estimated_cost_usd": null,
+  "accounting_basis": "measured_usage_only",
+  "unmeasured_runs": 1,
+  "total_usage_complete": false,
+  "explanation": "Cumulative numeric subtotals include measured usage only; this run is unmeasured."
+}
