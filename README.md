@@ -2,6 +2,10 @@
 
 This is a React chat UI using **assistant-ui primitives** and custom message bubbles, plus the browser's native `WebSocket` API. It is a transport test for `ws://ubicompsystem.no-ip.org:3000`. It does not use Vercel AI SDK or call any AI service itself. The hotel background is fictional.
 
+## WebSocket configuration
+
+The editable QA URL defaults to `ws://ubicompsystem.no-ip.org:3000`, and the optional WebSocket subprotocol defaults to the supplied candidate `ubicomp-chat`. Its meaning is unconfirmed: the app offers it only as protocol metadata, and the backend owner must confirm whether the supplied string is actually an authentication token or some other field. Configure the URL and protocol in the connection console before clicking **Connect**. Use a blank protocol to call the native WebSocket constructor without a subprotocol; surrounding whitespace is trimmed. The app reports the browser's actual negotiated `socket.protocol` after a successful handshake and does not claim a requested protocol was negotiated unless the browser reports it.
+
 ## Run and test
 
 Use Node.js 22 or newer:
@@ -29,7 +33,7 @@ If the server responds with JSON, the demo intentionally shows that JSON unchang
 | Received in log      | The endpoint sent data back on the WebSocket. The bubble shows the same raw text.                                 |
 | Error / disconnected | Inspect browser DevTools Network → WS and backend logs; the browser often hides the handshake failure reason.     |
 
-We could not complete a live handshake from the development environment: the endpoint probe timed out before any message was sent. Run the page from a network that can resolve and reach that host. The result in your browser is the proof of connectivity.
+The bounded browser QA test attempted only a connection against the supplied endpoint from `http://localhost:5173`, with no chatbot payload. The UI forwarded `ubicomp-chat` as the requested subprotocol; the browser failed the candidate connection with an error and close code 1006, and `socket.protocol` never became available. Clearing the field exercised the no-protocol constructor path; that connection also failed with an error and close code 1006. The matching HTTP/1.1 upgrade probes returned `500 Internal Server Error` both with and without `Sec-WebSocket-Protocol: ubicomp-chat`. These results do not identify the backend's expected protocol or whether the supplied string is an auth token.
 
 **Important:** `http://localhost` can use `ws://`. An HTTPS WordPress page generally needs a `wss://` endpoint; the demo reports this before trying to connect. If port 3000 is blocked or the server only allows certain origins, the backend/network owner must enable access. A Socket.IO server needs a Socket.IO client and its own protocol; this demo tests standard WebSocket only. Do not add credentials to the URL or commit secrets to this project.
 

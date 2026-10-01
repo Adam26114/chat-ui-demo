@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import {
     DEFAULT_WS_URL,
+    DEFAULT_WS_SUBPROTOCOL,
     type ConnectionStatus,
     type SocketEvent,
     WebSocketSource,
@@ -28,6 +29,7 @@ export function ConnectionConsole({
     sendRaw,
 }: ConnectionConsoleProps) {
     const [url, setUrl] = useState(DEFAULT_WS_URL)
+    const [subprotocol, setSubprotocol] = useState(DEFAULT_WS_SUBPROTOCOL)
     const [payload, setPayload] = useState("hello")
 
     return (
@@ -57,11 +59,23 @@ export function ConnectionConsole({
                         Disconnect
                     </Button>
                 ) : (
-                    <Button size="sm" onClick={() => connect(url)}>
+                    <Button size="sm" onClick={() => connect(url, subprotocol)}>
                         Connect
                     </Button>
                 )}
             </div>
+            <Label className="console-label" htmlFor="socket-subprotocol">
+                WebSocket subprotocol (optional)
+            </Label>
+            <Input
+                id="socket-subprotocol"
+                className="console-input"
+                value={subprotocol}
+                onChange={(event) => setSubprotocol(event.target.value)}
+                spellCheck={false}
+                autoComplete="off"
+                placeholder="Leave blank for no subprotocol"
+            />
             <Label className="console-label" htmlFor="socket-payload">
                 Exact payload to send
             </Label>

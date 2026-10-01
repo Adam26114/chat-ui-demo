@@ -1,6 +1,8 @@
 import type { IncomingMessage, MessageSource } from "./types"
 
 export const DEFAULT_WS_URL = "ws://ubicompsystem.no-ip.org:3000"
+// This is a supplied protocol candidate with unconfirmed meaning, not a credential or secret.
+export const DEFAULT_WS_SUBPROTOCOL = "ubicomp-chat"
 export type ConnectionStatus =
     "disconnected" | "connecting" | "connected" | "error"
 export type SocketEvent = {
@@ -36,9 +38,10 @@ export class WebSocketSource implements MessageSource {
             listener({ type, detail, status, at: new Date() })
         )
     }
-    connect(url: string) {
+    connect(url: string, subprotocol?: string) {
         this.disconnect()
         const endpoint = url.trim()
+        const normalizedProtocol = subprotocol?.trim()
         if (!/^wss?:\/\//i.test(endpoint)) {
             this.emit("error", "Use a ws:// or wss:// URL.", "error")
             return
@@ -57,14 +60,20 @@ export class WebSocketSource implements MessageSource {
         const generation = ++this.generation
         this.emit("status", `Connecting to ${endpoint}`, "connecting")
         try {
-            const socket = new WebSocket(endpoint)
+            // Omit the second constructor argument for native no-protocol usage.
+            const socket = normalizedProtocol
+                ? new WebSocket(endpoint, normalizedProtocol)
+                : new WebSocket(endpoint)
             socket.binaryType = "arraybuffer"
             this.socket = socket
             socket.addEventListener("open", () => {
                 if (generation !== this.generation) return
+                const negotiatedProtocol = socket.protocol
                 this.emit(
                     "status",
-                    "Connected. WebSocket handshake succeeded.",
+                    negotiatedProtocol
+                        ? `Connected. WebSocket handshake succeeded. Negotiated protocol: ${negotiatedProtocol}.`
+                        : "Connected. WebSocket handshake succeeded.",
                     "connected"
                 )
             })

@@ -105,7 +105,7 @@ export function ChatRuntimeProvider({
         isRunning,
         status,
         events,
-        connect: (url) => source.connect(url),
+        connect: (url, subprotocol) => source.connect(url, subprotocol),
         disconnect: () => source.disconnect(),
         sendRaw: (payload) => source.send(payload),
     }
