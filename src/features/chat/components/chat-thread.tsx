@@ -7,8 +7,8 @@ import { ChatComposer } from "./chat-composer"
 
 export function ChatThread({
     isRunning,
-    status,
-}: Pick<ChatRuntimeController, "isRunning" | "status">) {
+    ready,
+}: Pick<ChatRuntimeController, "isRunning" | "status" | "ready">) {
     return (
         <ThreadPrimitive.Root className="chat-thread">
             <ThreadPrimitive.Viewport className="message-viewport" autoScroll>
@@ -47,7 +47,7 @@ export function ChatThread({
                     <ArrowDown size={16} />
                 </ThreadPrimitive.ScrollToBottom>
             </ThreadPrimitive.Viewport>
-            <ChatComposer connected={status === "connected"} />
+            <ChatComposer ready={ready} isRunning={isRunning} />
         </ThreadPrimitive.Root>
     )
 }

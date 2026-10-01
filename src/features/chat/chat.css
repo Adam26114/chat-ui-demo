@@ -40,6 +40,12 @@
     display: grid;
     place-items: center;
 }
+.chat-brand img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
 .chat-header-copy {
     display: flex;
     flex-direction: column;
@@ -87,6 +93,33 @@
     line-height: 1.5;
     color: #7a857d;
 }
+.chat-error {
+    margin-top: 10px !important;
+    color: #a33f2f !important;
+    font-size: 11px !important;
+}
+.chat-expiry {
+    margin-top: 8px !important;
+    color: #7e6b4f !important;
+    font-size: 10px !important;
+}
+.chat-status-action {
+    margin-top: 10px;
+}
+.chat-unavailable {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: #fffdfa;
+}
+.message-bubble--staff a {
+    color: #1c4b42;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.message-bubble--staff p { margin: 0 0 8px; }
+.message-bubble--staff p:last-child { margin-bottom: 0; }
 .chat-thread {
     min-height: 0;
     flex: 1;

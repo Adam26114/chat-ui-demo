@@ -27,6 +27,13 @@
     height: 8px;
     border-radius: 50%;
 }
+.status-dot--disconnected { background: #aab0a7; }
+.status-dot--requesting-token,
+.status-dot--connecting,
+.status-dot--authenticating { background: #d5a45d; }
+.status-dot--ready { background: #52aa78; }
+.status-dot--error,
+.status-dot--expired { background: #d66e5d; }
 .console-label {
     display: block;
     margin: 10px 0 5px;
@@ -69,6 +76,24 @@
     font-size: 10px;
     color: #7e8a80;
 }
+.console-error {
+    margin: 2px 0 10px;
+    color: #a33f2f;
+    font-size: 11px;
+    line-height: 1.45;
+}
+.console-expiry {
+    margin: 0 0 10px;
+    color: #7e6b4f;
+    font-size: 10px;
+}
+.connection-console--setup-error {
+    display: grid;
+    gap: 7px;
+}
+.connection-console--setup-error strong { color: #8e392d; }
+.connection-console--setup-error span,
+.connection-console--setup-error small { color: #657568; line-height: 1.45; }
 .console-log {
     height: 120px;
     overflow: auto;

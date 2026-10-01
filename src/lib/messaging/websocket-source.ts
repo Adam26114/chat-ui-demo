@@ -1,15 +1,24 @@
-import type { IncomingMessage, MessageSource } from "./types"
+import type { IncomingMessage, MessageSource, SocketIOConfiguration, SocketTrigger } from "./types"
+export type SocketEvent = { id: string; type: string; detail: string; at: Date; status?: ConnectionStatus }
 
 export const DEFAULT_WS_URL = "ws://ubicompsystem.no-ip.org:3000"
 // This is a supplied protocol candidate with unconfirmed meaning, not a credential or secret.
-export const DEFAULT_WS_SUBPROTOCOL = "ubicomp-chat"
-export type ConnectionStatus =
-    "disconnected" | "connecting" | "connected" | "error"
-export type SocketEvent = {
-    type: "status" | "sent" | "received" | "error"
-    detail: string
-    at: Date
-    status?: ConnectionStatus
+export const DEFAULT_WS_SUBPROTOCOL = ""
+export type ConnectionStatus = "disconnected" | "connecting" | "connected" | "error"
+export type ConnectionState = { status: ConnectionStatus; ready: boolean; error: string | null; expiresAtUnixSeconds: number | null; identityEpoch: number }
+export interface ChatBotSource {
+    configure(options: SocketIOConfiguration): void
+    connect(): Promise<void>
+    restart(): Promise<void>
+    disconnect(): void
+    expireSession(): void
+    send(text: string): Promise<void>
+    login(): Promise<void>
+    logout(): Promise<void>
+    getState(): ConnectionState
+    subscribeState(callback: (state: ConnectionState) => void): () => void
+    subscribeEvents(callback: (event: SocketEvent) => void): () => void
+    subscribeTriggers(callback: (trigger: SocketTrigger) => void): () => void
 }
 
 export class WebSocketSource implements MessageSource {
@@ -34,8 +43,15 @@ export class WebSocketSource implements MessageSource {
         detail: string,
         status?: ConnectionStatus
     ) {
+        const at = new Date()
         this.eventListeners.forEach((listener) =>
-            listener({ type, detail, status, at: new Date() })
+            listener({
+                id: crypto.randomUUID(),
+                type,
+                detail,
+                status,
+                at,
+            })
         )
     }
     connect(url: string, subprotocol?: string) {

@@ -113,8 +113,13 @@
 .status-dot--connecting {
     background: #d5a45d;
 }
-.status-dot--connected {
+.status-dot--ready {
     background: #52aa78;
+}
+.status-dot--requesting-token,
+.status-dot--authenticating,
+.status-dot--expired {
+    background: #d5a45d;
 }
 .status-dot--error {
     background: #d66e5d;
